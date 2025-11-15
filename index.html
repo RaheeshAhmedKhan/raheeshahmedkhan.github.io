@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Minecraft Pros and Cons</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f9f9f9;
+    }
+    .wrapper {
+      max-width: 600px;
+      margin: auto;
+      padding: 20px;
+    }
+    h1 {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+    .section {
+      background: #fff;
+      padding: 20px;
+      margin-bottom: 20px;
+      border-radius: 8px;
+      box-shadow: 0 0 5px rgba(0,0,0,0.1);
+    }
+    .ad-panel {
+      border: 1px solid #ccc;
+      padding: 15px;
+      margin-top: 10px;
+      background: #fefefe;
+    }
+    button {
+      margin-top: 10px;
+      padding: 8px 12px;
+      background: #333;
+      color: #fff;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+    button:hover {
+      background: #555;
+    }
+  </style>
+</head>
+<body>
+  <div class="wrapper">
+    <!-- Article Section -->
+    <div class="section">
+      <h1>Minecraft: Pros and Cons</h1>
+      <h2>Pros</h2>
+      <ul>
+        <li>Creative freedom to build anything.</li>
+        <li>Educational value: resource management and problem solving.</li>
+        <li>Massive community with mods and servers.</li>
+      </ul>
+      <h2>Cons</h2>
+      <ul>
+        <li>Can be addictive and time-consuming.</li>
+        <li>Graphics are blocky and may not appeal to everyone.</li>
+        <li>Requires updates and sometimes paid add-ons.</li>
+      </ul>
+    </div>
+
+    <!-- Ad Panel 1 -->
+    <div class="section">
+      <h2>Ad Panel 1</h2>
+      <div id="ad1" class="ad-panel">
+        <p>Ad Slot 1: Adsterra script</p>
+      </div>
+      <button onclick="nextAd(1)">Next Ad</button>
+    </div>
+
+    <!-- Ad Panel 2 -->
+    <div class="section">
+      <h2>Ad Panel 2</h2>
+      <div id="ad2" class="ad-panel">
+        <p>Ad Slot 2: PropellerAds script</p>
+      </div>
+      <button onclick="nextAd(2)">Next Ad</button>
+    </div>
+
+    <!-- Ad Panel 3 -->
+    <div class="section">
+      <h2>Ad Panel 3</h2>
+      <div id="ad3" class="ad-panel">
+        <p>Ad Slot 3: CPAlead video ad</p>
+      </div>
+      <button onclick="nextAd(3)">Next Ad</button>
+    </div>
+  </div>
+
+  <script>
+    const ads = {
+      1: [
+        '<p>Ad Slot 1: Adsterra script</p>',
+        '<p>Ad Slot 1: Alternate Adsterra</p>'
+      ],
+      2: [
+        '<p>Ad Slot 2: PropellerAds script</p>',
+        '<p>Ad Slot 2: Alternate PropellerAds</p>'
+      ],
+      3: [
+        '<p>Ad Slot 3: CPAlead video ad</p>',
+        '<p>Ad Slot 3: Alternate CPAlead</p>'
+      ]
+    };
+
+    const adIndex = { 1: 0, 2: 0, 3: 0 };
+
+    function nextAd(panel) {
+      adIndex[panel] = (adIndex[panel] + 1) % ads[panel].length;
+      document.getElementById(`ad${panel}`).innerHTML = ads[panel][adIndex[panel]];
+    }
+  </script>
+</body>
+</html>
